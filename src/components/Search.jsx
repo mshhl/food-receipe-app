@@ -1,10 +1,25 @@
-import { useState } from "react"
+import { useEffect, useState } from "react";
 
-export default function Search(){
-    const [query,setQuery] = useState("pizza")
-    return (
-        <div>
-            <input value={query} type="text" onChange={(e) => setQuery(e.target.value)} />
-        </div>
-    )
+const URL = import.meta.env.VITE_URL;
+const API_KEY = import.meta.env.VITE_API_KEY;
+
+export default function Search() {
+  const [query, setQuery] = useState("pizza");
+  useEffect(() => {
+    async function fetchFood() {
+      const response = await fetch(`${URL}?query=${query}&apiKey=${API_KEY}`);
+      const data = await response.json();
+      console.log(data.results)
+    }
+    fetchFood()
+  }, [query]);
+  return (
+    <div>
+      <input
+        value={query}
+        type="text"
+        onChange={(e) => setQuery(e.target.value)}
+      />
+    </div>
+  );
 }
