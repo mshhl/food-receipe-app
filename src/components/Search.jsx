@@ -9,9 +9,9 @@ export default function Search() {
     async function fetchFood() {
       const response = await fetch(`${URL}?query=${query}&apiKey=${API_KEY}`);
       const data = await response.json();
-      console.log(data.results)
+      console.log(data.results);
     }
-    fetchFood()
+    fetchFood();
   }, [query]);
   return (
     <div>
