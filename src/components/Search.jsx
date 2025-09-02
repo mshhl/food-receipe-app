@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
 import styles from "./search.module.css";
 const URL = import.meta.env.VITE_URL;
-const API_KEY = import.meta.env.VITE_API_KEY;
 
 export default function Search({foodData,setFoodData}) {
-  const [query, setQuery] = useState("pizza");
+  const [query, setQuery] = useState("salad");
   useEffect(() => {
     async function fetchFood() {
-      const response = await fetch(`${URL}?query=${query}&apiKey=${API_KEY}`);
+     try {
+       const response = await fetch(`${URL}?s=${query}`);
       const data = await response.json();
-      console.log(data.results);
-      setFoodData(data.results);
+      setFoodData(data.meals);
+     } catch (error) {
+      console.error("Error occuered",error.message);
+     }
     }
     fetchFood();
   }, [query]);1
