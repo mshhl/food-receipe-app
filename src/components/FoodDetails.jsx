@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import styles from "./fooddetails.module.css";
 const RECEIPEURL = import.meta.env.VITE_FETCH_RECEIPE_API_1;
 const VITE_RECEIPE_URL = import.meta.env.VITE_RECEIPE_URL
 export default function FoodDetails({ foodId }) {
@@ -17,25 +17,28 @@ export default function FoodDetails({ foodId }) {
     fetchReceipe()
  },[foodId])
   return(
-    <div>
-   <div>
-     <h1>{food.strMeal}</h1>
-     <img src={food.strMealThumb} />
-   </div>
-   <span>
+  <div>
+   <div className={styles.receipeCard}>
+     <h1 className={styles.receipeName}>{food.strMeal}</h1>
+     <img className={styles.receipeImage} src={food.strMealThumb} />
+     <div className={styles.receipeDetails}>
+      <span>
     <strong>{food.strArea }😊</strong>
    </span>
    <span>
     {food.strCategory}🍗
    </span>
+   </div>
 
    <div>
     <h2>Instructions</h2>
     {isLoading? (<p>isLoading...</p>):(food.strInstructions)}
-     
+    
    </div>
 
+   </div>
+  
         
   </div>
-  ) 
+  )
 }
