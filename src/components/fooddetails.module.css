@@ -27,3 +27,11 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.receipeInstructions{
+    padding: 0px;
+    border-radius: 5px;
+    color: #adaab0;
+    margin-left: 5px;
+
+}

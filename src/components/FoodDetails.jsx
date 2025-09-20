@@ -29,11 +29,10 @@ export default function FoodDetails({ foodId }) {
     {food.strCategory}🍗
    </span>
    </div>
-
-   <div>
-    <h2>Instructions</h2>
+   <h2>Instructions</h2>
+   <div className={styles.receipeInstructions}>
     {isLoading? (<p>isLoading...</p>):(food.strInstructions)}
-    
+
    </div>
 
    </div>
