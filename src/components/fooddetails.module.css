@@ -35,3 +35,13 @@
     margin-left: 5px;
 
 }
+.ingredients {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.innerIngredientDiv{
+    display: flex;
+    justify-content: space-between;
+   
+}

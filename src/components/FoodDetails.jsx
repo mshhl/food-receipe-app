@@ -29,6 +29,45 @@ export default function FoodDetails({ foodId }) {
     {food.strCategory}🍗
    </span>
    </div>
+   <h2>Ingredients</h2>
+   <div className={styles.ingredients}>
+   <div className={styles.innerIngredientDiv}>
+       <strong>{food.strIngredient1}</strong>
+       <strong>{food.strMeasure1}</strong>
+    </div>
+   <div className={styles.innerIngredientDiv}>
+       <strong>{food.strIngredient2}</strong>
+       <strong>{food.strMeasure2}</strong>
+    </div>
+   <div className={styles.innerIngredientDiv}>
+       <strong>{food.strIngredient3}</strong>
+       <strong>{food.strMeasure3}</strong>
+    </div>
+   <div className={styles.innerIngredientDiv}>
+       <strong>{food.strIngredient4}</strong>
+       <strong>{food.strMeasure4}</strong>
+    </div>
+   <div className={styles.innerIngredientDiv}>
+       <strong>{food.strIngredient5}</strong>
+       <strong>{food.strMeasure5}</strong>
+    </div>
+   <div className={styles.innerIngredientDiv}>
+       <strong>{food.strIngredient6}</strong>
+       <strong>{food.strMeasure6}</strong>
+    </div>
+   <div className={styles.innerIngredientDiv}>
+       <strong>{food.strIngredient7}</strong>
+       <strong>{food.strMeasure7}</strong>
+    </div>
+   <div className={styles.innerIngredientDiv}>
+       <strong>{food.strIngredient8}</strong>
+       <strong>{food.strMeasure8}</strong>
+    </div>
+   <div className={styles.innerIngredientDiv}>
+       <strong>{food.strIngredient9}</strong>
+       <strong>{food.strMeasure9}</strong>
+    </div>
+   </div>
    <h2>Instructions</h2>
    <div className={styles.receipeInstructions}>
     {isLoading? (<p>isLoading...</p>):(food.strInstructions)}
